@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b1b">
+  <title>Fieldnotes · Asset Intelligence Copilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css?v=20261017-8">
+  <link rel="stylesheet" href="css/components.css?v=20261017-5">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Fieldnotes home">
+        <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 23.5 13.5 8l4.3 8.8 2.1-4.3L26 23.5H6Z"/><path d="M9.3 20h13.4M13.2 20l3.1-6.2 3.3 6.2"/></svg></span>
+        <span><strong>fieldnotes</strong><small>ASSET INTELLIGENCE</small></span>
+      </a>
+
+      <button class="new-chat" id="new-chat"><span class="plus">+</span> New conversation <kbd>⌘ K</kbd></button>
+
+      <div class="side-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Workspace">
+        <button class="nav-item active"><span class="nav-icon">⌂</span> Copilot <span class="nav-current"></span></button>
+        <button class="nav-item" id="field-overview"><span class="nav-icon">◫</span> Field overview <span class="nav-soon">LIVE</span></button>
+      </nav>
+
+      <div class="side-label recent-label">RECENT CONVERSATIONS</div>
+      <div class="conversation-list" id="conversation-list"><div class="empty-history">Your conversations<br>will show up here.</div></div>
+
+      <div class="sidebar-bottom">
+        <div class="connection"><span class="connection-dot" id="connection-dot"></span><span id="connection-label">Connecting to field data…</span></div>
+        <div class="workspace-foot"><span class="mini-mark">F</span><span><strong>FlytBase Field Ops</strong><small>Sample field · 200 wells</small></span><span class="more">···</span></div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>Copilot</span><span class="crumb-slash">/</span><strong id="topbar-title">New conversation</strong></div>
+        <div class="topbar-actions">
+          <div class="database-control"><span class="database-label">DATABASE</span><label class="sr-only" for="database-picker">Selected database</label><select id="database-picker" aria-label="Selected database"><option>Loading databases…</option></select><span id="database-latest" class="database-latest">Loading changes…</span><button type="button" id="edit-database" class="database-import">Edit data</button><button type="button" id="import-database" class="database-import">＋ Import ZIP</button><input id="database-file" type="file" accept=".zip,application/zip" hidden><button type="button" id="database-history" class="database-history" title="View database change history">History</button></div>
+          <div class="live-indicator"><span></span> FIELD DATA CONNECTED</div>
+          <div class="user-control"><span class="user-avatar" id="user-avatar">—</span><label class="sr-only" for="user-picker">Current user</label><select id="user-picker" aria-label="Choose user"><option>Loading users…</option></select><span class="select-chevron">⌄</span></div>
+        </div>
+      </header>
+
+      <section class="conversation" id="conversation">
+        <div class="welcome" id="welcome">
+          <div class="welcome-kicker"><span class="pulse"></span> YOUR FIELD, IN CONTEXT</div>
+          <h1>Good morning.<br><span>What’s happening out there?</span></h1>
+          <p class="welcome-copy">Ask a question about your wells. I’ll bring together the records, surface the signal, and show you the evidence.</p>
+          <div class="prompt-heading">START WITH A QUESTION <span>↘</span></div>
+          <div class="prompt-grid">
+            <button class="prompt-card" data-prompt="Which wells in my area are down right now?"><span class="prompt-icon amber">↘</span><span><strong>Find wells that are down</strong><small>Current production status in your area</small></span><span class="prompt-arrow">↗</span></button>
+            <button class="prompt-card" data-prompt="Which wells had the most downtime this summer, and why?"><span class="prompt-icon blue">▥</span><span><strong>Investigate downtime</strong><small>Rank wells and trace the causes</small></span><span class="prompt-arrow">↗</span></button>
+            <button class="prompt-card" data-prompt="Show me confirmed spills of 5 barrels or more."><span class="prompt-icon coral">◉</span><span><strong>Review spill events</strong><small>Confirmed incidents and reporting</small></span><span class="prompt-arrow">↗</span></button>
+            <button class="prompt-card" data-prompt="How has WELL-0001 performed over the last 90 days?"><span class="prompt-icon green">⌁</span><span><strong>Explore a well</strong><small>Trends, maintenance and context</small></span><span class="prompt-arrow">↗</span></button>
+          </div>
+          <div class="welcome-foot"><span>TRY ASKING IN YOUR OWN WORDS</span><span>Answers grounded in field records <b>·</b> Sources included</span></div>
+        </div>
+        <div class="message-list" id="message-list" aria-live="polite"></div>
+      </section>
+
+      <footer class="composer-area">
+        <form class="composer" id="chat-form">
+          <label class="sr-only" for="chat-input">Ask the Asset Intelligence Copilot</label>
+          <textarea id="chat-input" rows="1" maxlength="2000" placeholder="Ask anything about your wells…" autocomplete="off"></textarea>
+          <div class="composer-bottom"><span class="composer-hint"><span class="sparkle">✳</span> The copilot chooses a view to fit your question</span><span class="composer-actions"><kbd>↵</kbd><span>to send</span><button class="send-button" id="send-button" type="submit" aria-label="Send message"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M12 5l7 7-7 7"/></svg></button></span></div>
+        </form>
+        <div class="privacy-note">Field intelligence can be wrong. Verify critical decisions against the source records.</div>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/a2ui-registry.js?v=20261017-6"></script>
+  <script src="js/a2ui-renderer.js?v=20261017-7"></script>
+</body>
+</html>

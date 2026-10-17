@@ -1,0 +1,7 @@
+# Organizer-only prototype, not part of the participant repo
+prototype/
+# OS files
+.DS_Store
+Thumbs.db
+# Local imported databases and operational data
+data/backend/databases/

@@ -1,0 +1,13 @@
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\chat\ChatController.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\chat\DatabaseController.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\chat\MemoryStore.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\CopilotApplication.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\core\Agent.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\core\Dataset.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\core\DatasetRegistry.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\core\DocIndex.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\core\Domain.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\core\Models.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\core\OllamaClient.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\core\Overlay.java
+D:\Hackathons\HacktoberFest\FlytBase\flytbase-ahc-swe-asset-intelligence-dataset\data\backend\src\main\java\com\flytbase\copilot\core\Tools.java

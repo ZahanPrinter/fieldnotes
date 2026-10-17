@@ -1,0 +1,17 @@
+copilot:
+  data-root: ${COPILOT_DATA_ROOT:../../data/sample-data}
+  db-root: ${COPILOT_DB_ROOT:./databases}
+  as-of: ${COPILOT_AS_OF:2026-10-17}
+  ollama-url: ${OLLAMA_URL:http://localhost:11434}
+  model: ${COPILOT_MODEL:gemma4:e4b}
+  num-ctx: ${COPILOT_NUM_CTX:16384}
+server:
+  port: 8080
+spring:
+  mvc:
+    async:
+      request-timeout: 300000
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB

@@ -1,0 +1,5 @@
+.welcome[hidden]{display:none}
+.heatmap-scroll{overflow:auto;border:1px solid #2c3b36;border-radius:7px}
+.heatmap{border-collapse:separate;border-spacing:3px;width:100%;font:9px 'DM Mono',monospace;text-align:center}
+.heatmap th{color:#a6b1a7;font-weight:400;padding:7px;white-space:nowrap}
+.heatmap td{min-width:28px;height:28px;border-radius:4px;color:#eaf0e6}
